@@ -1,0 +1,25 @@
+.Nav{
+    margin-bottom: 9px;
+}
+.Nav button{
+    background: #FFFFFF;
+    border: 7px solid #333333;
+    box-sizing: border-box;
+    font-family: 'Bai Jamjuree';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    /* padding: 5px 40px; */
+    width: 196px;
+    height:47px;
+    margin-right: 24.5px;
+}
+
+.Nav button:nth-of-type(3n){
+    margin-right: 0;
+}
+
+.Nav button:hover{
+    background: #333333;
+    color:white;
+}

@@ -3,6 +3,8 @@ import './App.css';
 import { APIKEY } from './api-key'
 import { Axios, AxiosResponse } from 'axios';
 import SearchBar from './Components/SearchBar';
+import Nav from './Components/Nav';
+
 
 export interface IState {
   word: string,
@@ -42,6 +44,7 @@ useEffect(()=>{
         <h2>Norbert Matynia's</h2>
         <h1>Synonym Checker</h1>
       </div>
+      <Nav/>
       <SearchBar word={word} setWord ={setWord}/>
     </div>
   );
