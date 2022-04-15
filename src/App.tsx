@@ -36,15 +36,13 @@ useEffect(()=>{
   });
 },[word])
 
-
-
   return (
     <div className="App">
-      <div className="Header">
+      <div className="header">
         <h2>Norbert Matynia's</h2>
         <h1>Synonym Checker</h1>
       </div>
-      <SearchBar word={word}/>
+      <SearchBar word={word} setWord ={setWord}/>
     </div>
   );
 }
