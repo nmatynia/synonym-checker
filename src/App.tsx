@@ -4,6 +4,7 @@ import { APIKEY } from './api-key'
 import { Axios, AxiosResponse } from 'axios';
 import SearchBar from './Components/SearchBar';
 import Nav from './Components/Nav';
+import Synonyms from './Components/Synonyms';
 
 
 export interface IState {
@@ -49,7 +50,7 @@ const mapResponse = ( ) =>{
       </div>
       <Nav/>
       <SearchBar word={word} setWord ={setWord}/>
-      
+      <Synonyms word={word} synonyms={synonyms}/>
     </div>
   );
 }
