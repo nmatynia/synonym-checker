@@ -13,13 +13,21 @@ const SearchBar:React.FC<Props> = ({word, setWord}) =>{
         setInput(e.target.value);
     }
 
-    const handleSubmit = ():void =>{
+    const handleClick = ():void =>{
         if(!input){
             return
         }
         setWord(input);
         setInput("");
     }
+
+    //figuring which type is this function took more than I thought but it works :D
+    const handleKeyDown:React.KeyboardEventHandler = (e): void =>{
+        if(e.key === 'Enter'){
+            handleClick();
+        }
+    }
+    
     return (
         <div className="searchBarContainer">
             <div className="searchBar">
@@ -30,9 +38,9 @@ const SearchBar:React.FC<Props> = ({word, setWord}) =>{
                     placeholder="Enter word you are searching for."
                     value={input}
                     onChange = {handleChange}
-                    onSubmit = {handleSubmit}
+                    onKeyDown={handleKeyDown}
                 />
-                 <FaSearch size='30px' className="icon" />
+                 <FaSearch size='30px' className="icon" onClick={handleClick}/>
             </div>
         </div>
     )

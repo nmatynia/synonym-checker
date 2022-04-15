@@ -32,12 +32,15 @@ const options = {
 
 useEffect(()=>{
   axios.request(options).then((response: AxiosResponse) => {
-    setSynonyms(response.data);
+    setSynonyms(response.data.synonyms);
   }).catch((error: TypeError) => {
     console.error(error);
   });
 },[word])
 
+const mapResponse = ( ) =>{
+
+}
   return (
     <div className="App">
       <div className="header">
@@ -46,6 +49,7 @@ useEffect(()=>{
       </div>
       <Nav/>
       <SearchBar word={word} setWord ={setWord}/>
+      
     </div>
   );
 }
