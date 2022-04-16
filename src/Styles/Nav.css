@@ -13,6 +13,7 @@
     width: 196px;
     height:47px;
     margin-right: 24.5px;
+
 }
 
 .Nav button:nth-of-type(3n){
@@ -22,4 +23,5 @@
 .Nav button:hover{
     background: #333333;
     color:white;
+    cursor: pointer;
 }

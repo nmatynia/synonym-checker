@@ -23,8 +23,13 @@
     font-size: 36px;
     margin: auto;
     margin-right: 18px;
+    outline-width: 0;
 }
 
 .icon{
     margin: 19px 19px 19px 19px;
+}
+
+.icon:hover{
+    cursor: pointer;
 }
