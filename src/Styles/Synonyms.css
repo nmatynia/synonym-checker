@@ -1,0 +1,38 @@
+.SynonymsContainer{
+    position: absolute;
+    width: 735px;
+    height: auto;
+    background: #E1E1E1;
+    margin-top: 31px;
+    font-family:'Bai Jamjuree';
+    text-align: left;
+}
+
+h3{
+    font-size: 48px;
+    margin: 20px 29px;
+}
+
+.synonymContainer{
+    margin:30px;
+    margin-bottom:40px;
+    color:black;
+}
+
+.synonymDefinition{
+    font-weight:200;
+    font-size: 32px;
+    margin:0;
+    margin-bottom: 7px;
+}
+
+.synonymName{
+    color:#2B50AA;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.upperWord{
+    color: #2B50AA;
+}
+
