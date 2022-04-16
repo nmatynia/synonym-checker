@@ -5,17 +5,17 @@ import { Axios, AxiosResponse } from 'axios';
 import SearchBar from './Components/SearchBar';
 import Nav from './Components/Nav';
 import Synonyms from './Components/Synonyms';
-
+import {IWordData} from './interfaces';
 
 export interface IState {
   word: string,
-  synonyms: [],
+  wordData: IWordData,
   operationType: string
 }
 const App:React.FC = () => {
 
 const [word,setWord] = useState<IState["word"]>("");
-const [synonyms,setSynonyms] = useState<IState["synonyms"]>([]);
+const [wordData,setWordData] = useState<IState["wordData"]>();
 //scaling possibility
 const [operationType,setOperationType] = useState<IState["operationType"]>("synonyms");
 
@@ -23,7 +23,7 @@ const axios= require("axios");
 
 const options = {
   method: 'GET',
-  url: `https://wordsapiv1.p.rapidapi.com/words/${word}/${operationType}`,
+  url: `https://wordsapiv1.p.rapidapi.com/words/${word}`,
   headers: {
     'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com',
     'X-RapidAPI-Key': APIKEY
@@ -33,15 +33,15 @@ const options = {
 
 useEffect(()=>{
   axios.request(options).then((response: AxiosResponse) => {
-    setSynonyms(response.data.synonyms);
+    console.log(response.data)
+    setWordData(response.data);
   }).catch((error: TypeError) => {
     console.error(error);
   });
 },[word])
 
-const mapResponse = ( ) =>{
 
-}
+
   return (
     <div className="App">
       <div className="header">
@@ -50,7 +50,12 @@ const mapResponse = ( ) =>{
       </div>
       <Nav/>
       <SearchBar word={word} setWord ={setWord}/>
-      <Synonyms word={word} synonyms={synonyms}/>
+      
+      {
+        /* this exclamation mark is savior it says typescript even though something looks like it could be null, it can trust you that it's not*/
+        (wordData !== undefined) ? <Synonyms word={word} wordData={wordData!}/>:""
+      }
+
     </div>
   );
 }
