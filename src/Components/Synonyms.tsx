@@ -1,4 +1,4 @@
-import React,{ReactElement} from "react";
+import React from "react";
 import '../Styles/Synonyms.css';
 import {IWordData} from '../interfaces';
 
@@ -13,11 +13,11 @@ const Synonyms: React.FC<Props> = ({word,wordData}) =>{
         try{
             if(data.synonyms.length>1){
                 return(
-                    <div key={`${word}-${dataIdx}`} className={`${word}-${dataIdx}`}>
-                        <h4>{data.definition}</h4>
+                    <div key={`${word}-${dataIdx}`} className={`synonymContainer ${dataIdx}`}>
+                        <h4 className="synonymDefinition">{data.definition}</h4>
                         {data.synonyms.map((synonym,synonymIdx)=>{
                             return(
-                                <div key={synonymIdx}>
+                                <div key={synonymIdx} className="synonymName">
                                     {synonym}
                                 </div>
                             )
@@ -27,9 +27,9 @@ const Synonyms: React.FC<Props> = ({word,wordData}) =>{
             }
             else{
                 return(
-                    <div key={`${word}-${dataIdx}`} className={`${word}-${dataIdx}`}>
-                        <h4>Definition: {data.definition}</h4>
-                        {data.synonyms}
+                    <div key={`${word}-${dataIdx}`} className={`synonymContainer ${dataIdx}`}>
+                        <h4 className="synonymDefinition">{data.definition}</h4>
+                        <div className="synonymName">{data.synonyms}</div>
                     </div>
                 )
             }
@@ -42,7 +42,7 @@ const Synonyms: React.FC<Props> = ({word,wordData}) =>{
     return (
         <div className="SynonymsContainer">
            
-            <h3>Synonyms of word {word.toUpperCase()}</h3>
+            <h3>Synonyms of word <span className="upperWord">{word.toUpperCase()}</span></h3>
             {mappedSynonyms}
         </div>
     )
