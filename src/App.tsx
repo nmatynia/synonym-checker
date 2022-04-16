@@ -53,7 +53,7 @@ useEffect(()=>{
       
       {
         /* this exclamation mark is savior it says typescript even though something looks like it could be null, it can trust you that it's not*/
-        (wordData !== undefined) ? <Synonyms word={word} wordData={wordData!}/>:""
+        (wordData !== undefined && wordData.hasOwnProperty('results')) ? <Synonyms word={word} wordData={wordData!}/>:""
       }
 
     </div>
