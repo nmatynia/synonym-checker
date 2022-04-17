@@ -13,7 +13,7 @@ const Nav: React.FC<IProps> = ({setOperationType}) =>{
         <div className="Nav">
             <button onClick={handleClick("")}>SYNONYMS</button>
             <button onClick={handleClick("/rhymes")}>RHYMES</button>
-            <button>MEANING</button>
+            <button onClick={handleClick("/")}>MEANING</button>
 
         </div>
     )
