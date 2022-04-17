@@ -21,3 +21,11 @@ export interface wordDataSyllables{
     count:number;
     list:string[]
 }
+
+//Rhymes
+export interface IRhymesData{
+    word:string;
+    rhymes:{
+        all:string[]
+    }
+}
