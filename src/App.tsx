@@ -6,6 +6,7 @@ import SearchBar from './Components/SearchBar';
 import Nav from './Components/Nav';
 import Synonyms from './Components/Synonyms';
 import Rhymes from './Components/Rhymes';
+import Meaning from './Components/Meaning';
 import {IWordData, IRhymesData} from './interfaces';
 
 export interface IState {
@@ -18,7 +19,7 @@ const App:React.FC = () => {
 const [word,setWord] = useState<IState["word"]>("");
 const [wordData,setWordData] = useState<IState["wordData"]>();
 //scaling possibility
-const [operationType,setOperationType] = useState<IState["operationType"]>("/rhymes");
+const [operationType,setOperationType] = useState<IState["operationType"]>("/");
 
 const axios= require("axios");
 
@@ -56,10 +57,11 @@ const instanceOfWordData = (object: any): object is IWordData =>{
       
       {
         /* this exclamation mark is savior it says typescript even though something looks like it could be null, it can trust you that it's not*/
-        (wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Synonyms word={word} wordData={wordData!}/>:""
+        (operationType == "" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Synonyms word={word} wordData={wordData!}/>:""
       }
-      {(wordData !== undefined && !instanceOfWordData(wordData) && wordData.hasOwnProperty('rhymes')) ? <Rhymes word={word} wordData={wordData!}/>:""}
-      
+      {(operationType == "/rhymes" && wordData !== undefined && !instanceOfWordData(wordData) && wordData.hasOwnProperty('rhymes')) ? <Rhymes word={word} wordData={wordData!}/>:""}
+      {(operationType == "/" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Meaning word={word} wordData={wordData!}/>:""}
+
     </div>
   );
 }
