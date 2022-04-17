@@ -2,11 +2,11 @@ import React from "react";
 import '../Styles/Synonyms.css';
 import {IWordData} from '../interfaces';
 
-interface Props{
+interface IProps{
     word: string;
     wordData: IWordData;
 }
-const Synonyms: React.FC<Props> = ({word,wordData}) =>{
+const Synonyms: React.FC<IProps> = ({word,wordData}) =>{
 
     const mappedSynonyms = wordData.results.map((data,dataIdx) =>{
         console.log(data.synonyms);
