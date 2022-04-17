@@ -52,7 +52,7 @@ const instanceOfWordData = (object: any): object is IWordData =>{
         <h2>Norbert Matynia's</h2> 
         <h1>Synonym Checker</h1>
       </div>
-      <Nav setOperationType={setOperationType}/>
+      <Nav setOperationType={setOperationType} operationType={operationType}/>
       <SearchBar word={word} setWord ={setWord}/>
       
       {

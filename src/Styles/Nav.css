@@ -25,3 +25,13 @@
     color:white;
     cursor: pointer;
 }
+
+.Nav button.active{
+    background-color: white;
+    color:#2B50AA;
+    border: 7px solid #2B50AA;
+}
+.Nav button.active:hover{
+    background-color: #2B50AA;
+    color:white;
+}
