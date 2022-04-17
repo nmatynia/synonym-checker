@@ -49,7 +49,7 @@ const instanceOfWordData = (object: any): object is IWordData =>{
   return (
     <div className="App">
       <div className="header">
-        <h2>Norbert Matynia's</h2> 
+        <h2><a href='https://www.linkedin.com/in/norbert-matynia/' target="_blank">Norbert Matynia's</a></h2> 
         <h1>Synonym Checker</h1>
       </div>
       <Nav setOperationType={setOperationType} operationType={operationType}/>
@@ -57,10 +57,10 @@ const instanceOfWordData = (object: any): object is IWordData =>{
       
       {
         /* this exclamation mark is savior it says typescript even though something looks like it could be null, it can trust you that it's not*/
-        (operationType == "" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Synonyms word={word} wordData={wordData!} setOperationType={setOperationType} setWord={setWord}/>:""
+        (operationType === "" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Synonyms word={word} wordData={wordData!} setOperationType={setOperationType} setWord={setWord}/>:""
       }
-      {(operationType == "/rhymes" && wordData !== undefined && !instanceOfWordData(wordData) && wordData.hasOwnProperty('rhymes')) ? <Rhymes word={word} wordData={wordData!} setOperationType={setOperationType} setWord={setWord}/>:""}
-      {(operationType == "/" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Meaning word={word} wordData={wordData!}/>:""}
+      {(operationType === "/rhymes" && wordData !== undefined && !instanceOfWordData(wordData) && wordData.hasOwnProperty('rhymes')) ? <Rhymes word={word} wordData={wordData!} setOperationType={setOperationType} setWord={setWord}/>:""}
+      {(operationType === "/" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Meaning word={word} wordData={wordData!}/>:""}
 
     </div>
   );
