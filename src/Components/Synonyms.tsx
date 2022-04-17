@@ -5,8 +5,10 @@ import {IWordData} from '../interfaces';
 interface IProps{
     word: string;
     wordData: IWordData;
+    setWord: React.Dispatch<React.SetStateAction<string>>
+    setOperationType: React.Dispatch<React.SetStateAction<string>>
 }
-const Synonyms: React.FC<IProps> = ({word,wordData}) =>{
+const Synonyms: React.FC<IProps> = ({word,wordData,setOperationType,setWord}) =>{
 
     const mappedSynonyms = wordData.results.map((data,dataIdx) =>{
         console.log(data.synonyms);
@@ -17,7 +19,7 @@ const Synonyms: React.FC<IProps> = ({word,wordData}) =>{
                         <h4 className="synonymDefinition">{data.definition}</h4>
                         {data.synonyms.map((synonym,synonymIdx)=>{
                             return(
-                                <div key={synonymIdx} className="synonymName">
+                                <div key={synonymIdx} className="synonymName" onClick={()=>{setOperationType("/"); setWord(synonym)}}>
                                     {synonym}
                                 </div>
                             )

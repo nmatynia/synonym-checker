@@ -5,14 +5,16 @@ import {IRhymesData} from '../interfaces';
 interface Props{
     word: string;
     wordData: IRhymesData;
+    setWord: React.Dispatch<React.SetStateAction<string>>
+    setOperationType: React.Dispatch<React.SetStateAction<string>>
 }
 
-const Rhymes:React.FC<Props> = ({word,wordData}) =>{
+const Rhymes:React.FC<Props> = ({word,wordData,setWord,setOperationType}) =>{
     
     const mappedRhymes = () =>{
         return wordData.rhymes.all.map((rhyme,rhymeIdx)=>{
             return(
-                <div key={rhymeIdx}className="rhymeName">
+                <div key={rhymeIdx}className="rhymeName" onClick={()=>{setOperationType("/"); setWord(rhyme)}}>
                     {rhyme}
                 </div>
             )

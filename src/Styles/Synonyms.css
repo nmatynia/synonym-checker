@@ -32,6 +32,10 @@ h3{
     font-size: 32px;
 }
 
+.synonymName:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
 .upperWord{
     color: #2B50AA;
 }

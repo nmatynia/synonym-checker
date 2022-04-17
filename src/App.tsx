@@ -57,9 +57,9 @@ const instanceOfWordData = (object: any): object is IWordData =>{
       
       {
         /* this exclamation mark is savior it says typescript even though something looks like it could be null, it can trust you that it's not*/
-        (operationType == "" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Synonyms word={word} wordData={wordData!}/>:""
+        (operationType == "" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Synonyms word={word} wordData={wordData!} setOperationType={setOperationType} setWord={setWord}/>:""
       }
-      {(operationType == "/rhymes" && wordData !== undefined && !instanceOfWordData(wordData) && wordData.hasOwnProperty('rhymes')) ? <Rhymes word={word} wordData={wordData!}/>:""}
+      {(operationType == "/rhymes" && wordData !== undefined && !instanceOfWordData(wordData) && wordData.hasOwnProperty('rhymes')) ? <Rhymes word={word} wordData={wordData!} setOperationType={setOperationType} setWord={setWord}/>:""}
       {(operationType == "/" && wordData !== undefined && instanceOfWordData(wordData)  && wordData.hasOwnProperty('results')) ? <Meaning word={word} wordData={wordData!}/>:""}
 
     </div>
