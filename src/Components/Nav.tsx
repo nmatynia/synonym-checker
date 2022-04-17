@@ -1,11 +1,18 @@
 import React,{ useState } from "react";
 import "../Styles/Nav.css";
 
-const Nav: React.FC = () =>{
+interface IProps{
+    setOperationType: React.Dispatch<React.SetStateAction<string>>
+}
+const Nav: React.FC<IProps> = ({setOperationType}) =>{
+
+    const handleClick = (operation:string)=>{
+        return () => setOperationType(operation)
+    }
     return (
         <div className="Nav">
-            <button>SYNONYMS</button>
-            <button>RYHMES</button>
+            <button onClick={handleClick("")}>SYNONYMS</button>
+            <button onClick={handleClick("/rhymes")}>RHYMES</button>
             <button>MEANING</button>
 
         </div>
