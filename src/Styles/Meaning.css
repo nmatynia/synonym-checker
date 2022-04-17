@@ -1,0 +1,47 @@
+.MeaningContainer{
+    position: absolute;
+    width: 735px;
+    height: auto;
+    background: #E1E1E1;
+    margin-top: 31px;
+    font-family:'Bai Jamjuree';
+    text-align: left;
+}
+
+.meaningHeader{
+    font-size: 48px;
+    margin: 20px 29px;
+    color: #2B50AA;
+}
+.pronunciation{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 36px;
+    color:black;
+}
+.definitionContainer{
+    margin:30px;
+    margin-bottom:40px;
+    color:black;
+}
+.partOfSpeech{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.definition{
+    font-family: 'Bai Jamjuree';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.example{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 40px;
+    color: #777777;
+}
