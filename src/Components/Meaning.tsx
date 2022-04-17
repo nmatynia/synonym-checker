@@ -21,7 +21,7 @@ const Meaning: React.FC<IProps> = ({word,wordData}) =>{
 
     return(
         <div className="MeaningContainer">
-            <h3 className ="meaningHeader">{word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()} <span className ="pronunciation">/{wordData.hasOwnProperty('pronunciation.')?wordData.pronunciation.all:null}/</span></h3>
+            <h3 className ="meaningHeader">{word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()} <span className ="pronunciation">/{wordData.hasOwnProperty('pronunciation')?wordData.pronunciation.all:null}/</span></h3>
             {mappedData}
         </div>
     )
